@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:motion="http://schemas.android.com/tools">
+
+    <Transition
+        motion:motionInterpolator="linear"
+        app:constraintSetEnd="@layout/example_2_end"
+        app:constraintSetStart="@layout/example_2_start">
+
+        <OnSwipe
+            app:dragDirection="dragUp"
+            app:touchAnchorId="@id/rv"
+            app:touchAnchorSide="top" />
+
+        <KeyFrameSet>
+
+            <KeyAttribute
+                app:framePosition="35"
+                android:alpha="0"
+                app:motionTarget="@id/title2" />
+
+            <KeyAttribute
+                app:framePosition="80"
+                android:alpha="0"
+                app:motionTarget="@id/title1" />
+
+            <KeyAttribute
+                android:alpha="1"
+                app:motionTarget="@id/title1" />
+        </KeyFrameSet>
+
+    </Transition>
+</MotionScene>
