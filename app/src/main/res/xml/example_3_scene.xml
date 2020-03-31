@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        app:constraintSetEnd="@layout/example_3_end"
+        app:constraintSetStart="@layout/example_3_start">
+
+        <OnSwipe
+            app:dragDirection="dragUp"
+            app:touchAnchorSide="top"
+            app:touchRegionId="@id/container" />
+
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="0"
+                app:framePosition="5"
+                app:motionTarget="@id/preview_control_container" />
+        </KeyFrameSet>
+
+    </Transition>
+</MotionScene>

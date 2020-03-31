@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/example_3_scene">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:elevation="6dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/top_sep">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <TextView
+            android:id="@+id/tv_track_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Track Name"
+            android:textColor="@android:color/black"
+            android:textSize="25dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/gl_2" />
+
+        <TextView
+            android:id="@+id/tv_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:text="Group"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="@id/tv_track_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_track_name" />
+
+        <ProgressBar
+            android:id="@+id/progress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="20dp"
+            android:progress="20"
+            app:layout_constraintTop_toBottomOf="@id/tv_group" />
+
+        <TextView
+            android:id="@+id/tv_time1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="10dp"
+            android:alpha="0.33"
+            android:fontFamily="sans-serif"
+            android:text="0:34"
+            android:textColor="@android:color/black"
+            android:textSize="13dp"
+            app:layout_constraintStart_toStartOf="@id/progress"
+            app:layout_constraintTop_toBottomOf="@id/progress" />
+
+        <TextView
+            android:id="@+id/tv_time2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="8dp"
+            android:alpha="0.33"
+            android:fontFamily="sans-serif"
+            android:text="-2:34"
+            android:textColor="@android:color/black"
+            android:textSize="13dp"
+            app:layout_constraintEnd_toEndOf="@id/progress"
+            app:layout_constraintTop_toBottomOf="@id/progress" />
+
+
+        <ImageView
+            android:id="@+id/iv_1"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_rewind"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/iv_2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/progress" />
+
+        <ImageView
+            android:id="@+id/iv_2"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_play"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/iv_3"
+            app:layout_constraintStart_toEndOf="@id/iv_1"
+            app:layout_constraintTop_toBottomOf="@id/progress" />
+
+        <ImageView
+            android:id="@+id/iv_3"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_forward"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_2"
+            app:layout_constraintTop_toBottomOf="@id/progress" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="16dp"
+        android:elevation="8dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@id/sep"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toStartOf="@id/container"
+        app:layout_constraintTop_toTopOf="@id/container"
+        app:srcCompat="@drawable/img_2" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/preview_control_container"
+        android:layout_width="0dp"
+        android:layout_height="?actionBarSize"
+        android:layout_marginStart="64dp"
+        android:layout_marginEnd="16dp"
+        android:elevation="6dp"
+        app:layout_constraintEnd_toEndOf="@id/container"
+        app:layout_constraintStart_toStartOf="@id/container"
+        app:layout_constraintTop_toTopOf="@id/container">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:text="Track Name"
+            android:textColor="@android:color/black"
+            android:textSize="17dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_forward"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_forward"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_play"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="5dp"
+            android:src="@drawable/ic_play"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/iv_forward"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/top_sep"
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:layout_marginBottom="?actionBarSize"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toTopOf="@id/sep" />
+
+    <View
+        android:elevation="6dp"
+        android:id="@+id/sep"
+        android:layout_width="match_parent"
+        android:layout_height="0.25dp"
+        android:layout_marginBottom="?actionBarSize"
+        android:background="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <TextView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@android:color/white"
+        android:elevation="6dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:text="Bottom Navigation"
+        android:textColor="@android:color/black"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sep" />
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

@@ -8,7 +8,7 @@ import kotlinx.android.synthetic.main.activity_start_page.*
 class StartPageActivity : AppCompatActivity() {
 
     companion object {
-        val EXAMPLES = listOf<Int>(R.layout.activity_main, R.layout.example_2)
+        val EXAMPLES = listOf<Int>(R.layout.activity_main, R.layout.example_2, R.layout.example_3)
     }
 
     private val adapter by lazy {
