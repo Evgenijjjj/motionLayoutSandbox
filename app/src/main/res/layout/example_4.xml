@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/motionLayout"
+    app:layoutDescription="@xml/example_4_scene"
+    app:motionDebug="SHOW_PROGRESS">
+
+    <View
+        android:id="@+id/titleBackground"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/status_bar_bg"/>
+
+    <androidx.core.widget.NestedScrollView
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/scrollView"
+        app:layout_constraintTop_toBottomOf="@id/titleBackground"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:background="@android:color/white"
+                android:orientation="horizontal"
+                android:id="@+id/cardsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/titleBackground" >
+
+                <androidx.cardview.widget.CardView
+                    app:cardElevation="0dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_gravity="center_vertical"
+                    app:cardBackgroundColor="#10000000"
+                    app:cardCornerRadius="16dp"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"/>
+
+                <androidx.cardview.widget.CardView
+                    app:cardElevation="0dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_gravity="center_vertical"
+                    app:cardBackgroundColor="#10000000"
+                    app:cardCornerRadius="16dp"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"/>
+
+                <androidx.cardview.widget.CardView
+                    app:cardElevation="0dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_gravity="center_vertical"
+                    app:cardBackgroundColor="#10000000"
+                    app:cardCornerRadius="16dp"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"/>
+
+                <androidx.cardview.widget.CardView
+                    app:cardElevation="0dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_gravity="center_vertical"
+                    app:cardBackgroundColor="#10000000"
+                    app:cardCornerRadius="16dp"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"/>
+
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:scrollbars="vertical"
+                android:background="@android:color/white"
+                android:id="@+id/rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@id/cardsContainer"
+                tools:listitem="@layout/item_startpage" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        app:layout_constraintTop_toBottomOf="@id/status_bar_bg"
+        android:id="@+id/searchContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <View
+            android:id="@+id/searchBg"
+            android:alpha="0.2"
+            android:layout_marginStart="15dp"
+            android:background="@drawable/rounded_bg"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/voiceSearch"
+            android:layout_marginEnd="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="35dp"/>
+
+        <ImageView
+            android:id="@+id/searchImage"
+            android:padding="5dp"
+            android:layout_marginStart="6dp"
+            android:alpha="0.4"
+            android:src="@drawable/ic_search"
+            app:layout_constraintTop_toTopOf="@id/searchBg"
+            app:layout_constraintStart_toStartOf="@id/searchBg"
+            android:layout_width="35dp"
+            android:layout_height="35dp"/>
+
+        <TextView
+            android:layout_marginStart="10dp"
+            android:alpha="0.66"
+            app:layout_constraintBottom_toBottomOf="@id/searchBg"
+            app:layout_constraintTop_toTopOf="@id/searchBg"
+            app:layout_constraintStart_toEndOf="@id/searchImage"
+            android:text="Поиск"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+
+
+        <ImageView
+            android:padding="5dp"
+            android:src="@drawable/ic_mic"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/rounded_bg_blue"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/voiceSearch"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="35dp"
+            android:layout_height="35dp"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:elevation="4dp"
+        android:gravity="center|start"
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:paddingStart="15dp"
+        android:text="Главная"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/titleBackground"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:elevation="4dp"
+        android:id="@+id/searchBtn"
+        android:src="@drawable/ic_search"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/titleBackground"
+        app:layout_constraintEnd_toEndOf="@id/titleBackground"/>
+
+    <View
+        android:background="@android:color/white"
+        android:id="@+id/status_bar_bg"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.motion.widget.MotionLayout>
